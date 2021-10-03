@@ -13,12 +13,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9008);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(35063);
 /* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(38448);
-/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(28675);
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(86034);
 /* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(336);
 /* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(64115);
 /* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(53850);
 /* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(43663);
-/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(48017);
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(49444);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(85893);
 /* harmony import */ var _src_server_utilities__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(80853);
 
@@ -26,8 +26,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 function Home() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(next_head__WEBPACK_IMPORTED_MODULE_0__.default, {
       children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx("title", {
         children: "Indexed Content"
@@ -35,33 +36,34 @@ function Home() {
         name: "description",
         content: "Repo of useful things"
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("main", {
-      children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_3__/* .Center */ .M, {
-        textAlign: "center",
-        h: "10rem",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__/* .VStack */ .gC, {
-          spacing: 4,
-          children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__/* .Heading */ .X, {
-            fontSize: '2xl',
-            children: "Useful things"
-          }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__/* .Text */ .x, {
-            fontWeight: 500,
-            children: "Subtext of useful things"
-          })]
-        })
-      }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_7__/* .Container */ .W, {
-        maxW: "2xl",
-        children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_8__/* .SimpleGrid */ .M, {
-          columns: 1,
-          spacing: 5,
-          children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_9__/* .Box */ .xu, {
-            children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx(next_link__WEBPACK_IMPORTED_MODULE_1__.default, {
-              href: "/ffxiv-addons",
+    }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_3__/* .Center */ .M, {
+      textAlign: "center",
+      h: "10rem",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__/* .VStack */ .gC, {
+        spacing: 4,
+        children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__/* .Heading */ .X, {
+          fontSize: '2xl',
+          children: "Useful things"
+        }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__/* .Text */ .x, {
+          fontWeight: 500,
+          children: "Subtext of useful things"
+        })]
+      })
+    }), /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_7__/* .Container */ .W, {
+      maxW: "2xl",
+      display: "flex",
+      children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_8__/* .SimpleGrid */ .M, {
+        columns: 1,
+        spacing: 5,
+        children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_9__/* .Link */ .r, {
+          children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx(next_link__WEBPACK_IMPORTED_MODULE_1__.default, {
+            href: "/ffxiv-addons",
+            children: /*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx("a", {
               children: "FFXIV Addons"
             })
           })
         })
-      })]
+      })
     })]
   });
 } // re-export the reusable `getServerSideProps` function
@@ -112,7 +114,7 @@ function getServerSideProps({
 
 /***/ }),
 
-/***/ 61546:
+/***/ 96642:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -153,7 +155,7 @@ __webpack_require__.r(__webpack_exports__);
 
       const documentModule = __webpack_require__(5924)
 
-      const appMod = __webpack_require__(65542)
+      const appMod = __webpack_require__(91936)
       let App = appMod.default || appMod.then && appMod.then(mod => mod.default);
 
       const compMod = __webpack_require__(56988)
@@ -207,11 +209,11 @@ __webpack_require__.r(__webpack_exports__);
         rewrites: combinedRewrites,
         i18n: undefined,
         page: "/",
-        buildId: "HfFM3XeQeAywSRwUgO6EC",
-        escapedBuildId: "HfFM3XeQeAywSRwUgO6EC",
+        buildId: "t8EmmKlR9L90rnRQnlE0l",
+        escapedBuildId: "t8EmmKlR9L90rnRQnlE0l",
         basePath: "",
         pageIsDynamic: false,
-        encodedPreviewProps: {previewModeId:"1818db9309d855685bb74b1836e916f7",previewModeSigningKey:"4afdf7ee77412780724d9c7b3dcbdb33a3f0c5d46c859f2f49883ae40abfeca3",previewModeEncryptionKey:"07c03e938e69db05ff1c1f9b0957fde1aa7c3f4b9f152e4742729b12e0a080e9"}
+        encodedPreviewProps: {previewModeId:"f358770267376deebc6bde28ad37f858",previewModeSigningKey:"d8f3e9a6ee27ca039012ce66757940f9819345318e756dba4d8acd49b313e0f9",previewModeEncryptionKey:"182ef230428c64ac38bfccadd4d7c6f58a73535ca1c72dbde54526a19a3053cc"}
       })
       
     
@@ -395,7 +397,7 @@ module.exports = require("zlib");
 /******/ 	__webpack_require__.x = () => {
 /******/ 		// Load entry module and return exports
 /******/ 		// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 		var __webpack_exports__ = __webpack_require__.O(undefined, [158,84,312,758,404,296], () => (__webpack_require__(61546)))
+/******/ 		var __webpack_exports__ = __webpack_require__.O(undefined, [158,208,842,758,913,324], () => (__webpack_require__(96642)))
 /******/ 		__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 		return __webpack_exports__;
 /******/ 	};
@@ -558,11 +560,11 @@ module.exports = require("zlib");
 /******/ 		var next = __webpack_require__.x;
 /******/ 		__webpack_require__.x = () => {
 /******/ 			__webpack_require__.e(158);
-/******/ 			__webpack_require__.e(84);
-/******/ 			__webpack_require__.e(312);
+/******/ 			__webpack_require__.e(208);
+/******/ 			__webpack_require__.e(842);
 /******/ 			__webpack_require__.e(758);
-/******/ 			__webpack_require__.e(404);
-/******/ 			__webpack_require__.e(296);
+/******/ 			__webpack_require__.e(913);
+/******/ 			__webpack_require__.e(324);
 /******/ 			return next();
 /******/ 		};
 /******/ 	})();

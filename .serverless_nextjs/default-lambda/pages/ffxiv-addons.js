@@ -1,10 +1,10 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ 79406:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
@@ -38,8 +38,8 @@ var box = __webpack_require__(48017);
 var simple_grid = __webpack_require__(43663);
 // EXTERNAL MODULE: ./node_modules/@chakra-ui/layout/dist/esm/center.js
 var center = __webpack_require__(38448);
-// EXTERNAL MODULE: ./node_modules/@chakra-ui/layout/dist/esm/stack.js + 2 modules
-var stack = __webpack_require__(28675);
+// EXTERNAL MODULE: ./node_modules/@chakra-ui/layout/dist/esm/stack.js + 1 modules
+var stack = __webpack_require__(86034);
 // EXTERNAL MODULE: ./node_modules/@chakra-ui/avatar/dist/esm/avatar.js + 1 modules
 var avatar = __webpack_require__(91428);
 // EXTERNAL MODULE: ./node_modules/@chakra-ui/layout/dist/esm/heading.js
@@ -288,8 +288,12 @@ const ReleaseCard = /*#__PURE__*/react.memo(props => {
 });
 ReleaseCard.displayName = 'ReleaseCard';
 /* harmony default export */ const components_ReleaseCard = (ReleaseCard);
+// EXTERNAL MODULE: ./node_modules/@chakra-ui/breadcrumb/dist/esm/breadcrumb.js
+var breadcrumb = __webpack_require__(75658);
 // EXTERNAL MODULE: ./node_modules/@chakra-ui/layout/dist/esm/container.js
 var container = __webpack_require__(53850);
+// EXTERNAL MODULE: ./node_modules/next/link.js
+var next_link = __webpack_require__(35063);
 // EXTERNAL MODULE: ./node_modules/@apollo/client/link/context/context.cjs.js
 var context_cjs = __webpack_require__(24365);
 // EXTERNAL MODULE: ./node_modules/@apollo/client/link/error/error.cjs.js
@@ -351,6 +355,7 @@ function ffxiv_addons_defineProperty(obj, key, value) { if (key in obj) { Object
 
 
 
+
 const FFXIVAddons = /*#__PURE__*/react.memo(({
   data
 }) => {
@@ -359,7 +364,7 @@ const FFXIVAddons = /*#__PURE__*/react.memo(({
     1: setCards
   } = (0,react.useState)();
   (0,react.useEffect)(() => {
-    if (!data.errorType) {
+    if (data && !data.errorType) {
       let cards = [];
       repos.map(repo => {
         var _el$releases;
@@ -378,8 +383,8 @@ const FFXIVAddons = /*#__PURE__*/react.memo(({
           children: "An error occurred querying for the repositories"
         })
       }));
-      if (data.errorType === 'network') console.error(`Network error querying repos: ${data.statusCode}`);
-      if (data.errorType === 'graphQL') console.error(`GraphQL error(s) querying repos`);
+      if ((data === null || data === void 0 ? void 0 : data.errorType) === 'network') console.error(`Network error querying repos: ${data.statusCode}`);
+      if ((data === null || data === void 0 ? void 0 : data.errorType) === 'graphQL') console.error(`GraphQL error(s) querying repos`);
     }
   }, [data]);
   return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
@@ -396,7 +401,26 @@ const FFXIVAddons = /*#__PURE__*/react.memo(({
         h: "10rem",
         children: /*#__PURE__*/(0,jsx_runtime.jsxs)(stack/* VStack */.gC, {
           spacing: 4,
-          children: [/*#__PURE__*/jsx_runtime.jsx(heading/* Heading */.X, {
+          children: [/*#__PURE__*/(0,jsx_runtime.jsxs)(breadcrumb/* Breadcrumb */.aG, {
+            w: "full",
+            textAlign: "left",
+            mb: 2,
+            children: [/*#__PURE__*/jsx_runtime.jsx(breadcrumb/* BreadcrumbItem */.gN, {
+              children: /*#__PURE__*/jsx_runtime.jsx(breadcrumb/* BreadcrumbLink */.At, {
+                children: /*#__PURE__*/jsx_runtime.jsx(next_link.default, {
+                  href: "/",
+                  children: /*#__PURE__*/jsx_runtime.jsx("a", {
+                    children: "Home"
+                  })
+                })
+              })
+            }), /*#__PURE__*/jsx_runtime.jsx(breadcrumb/* BreadcrumbItem */.gN, {
+              isCurrentPage: true,
+              children: /*#__PURE__*/jsx_runtime.jsx(breadcrumb/* BreadcrumbLink */.At, {
+                children: "FFXIV-Addons"
+              })
+            })]
+          }), /*#__PURE__*/jsx_runtime.jsx(heading/* Heading */.X, {
             fontSize: 'xl',
             children: "FFXIV Addons"
           }), /*#__PURE__*/jsx_runtime.jsx(esm_text/* Text */.x, {
@@ -419,13 +443,11 @@ FFXIVAddons.displayName = 'FFXIVAddons';
 async function getServerSideProps(context) {
   var _req$headers$cookie;
 
-  let data;
+  let data = null; // Comment this to the end of the if statement when doing local dev
+
   const r = await apollo_client.query({
     query: repoQuery
   }).then(res => res).catch(err => err);
-  const {
-    req
-  } = context;
 
   if (r.networkError) {
     data = {
@@ -441,6 +463,9 @@ async function getServerSideProps(context) {
     console.info(JSON.stringify(data.rateLimit));
   }
 
+  const {
+    req
+  } = context;
   return {
     props: {
       data: data,
@@ -455,6 +480,7 @@ async function getServerSideProps(context) {
 /***/ 80853:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "s": () => (/* binding */ Chakra)
 /* harmony export */ });
@@ -493,9 +519,10 @@ function getServerSideProps({
 
 /***/ }),
 
-/***/ 33557:
+/***/ 12952:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
@@ -533,7 +560,7 @@ __webpack_require__.r(__webpack_exports__);
 
       const documentModule = __webpack_require__(5924)
 
-      const appMod = __webpack_require__(65542)
+      const appMod = __webpack_require__(91936)
       let App = appMod.default || appMod.then && appMod.then(mod => mod.default);
 
       const compMod = __webpack_require__(79406)
@@ -587,11 +614,11 @@ __webpack_require__.r(__webpack_exports__);
         rewrites: combinedRewrites,
         i18n: undefined,
         page: "/ffxiv-addons",
-        buildId: "HfFM3XeQeAywSRwUgO6EC",
-        escapedBuildId: "HfFM3XeQeAywSRwUgO6EC",
+        buildId: "t8EmmKlR9L90rnRQnlE0l",
+        escapedBuildId: "t8EmmKlR9L90rnRQnlE0l",
         basePath: "",
         pageIsDynamic: false,
-        encodedPreviewProps: {previewModeId:"1818db9309d855685bb74b1836e916f7",previewModeSigningKey:"4afdf7ee77412780724d9c7b3dcbdb33a3f0c5d46c859f2f49883ae40abfeca3",previewModeEncryptionKey:"07c03e938e69db05ff1c1f9b0957fde1aa7c3f4b9f152e4742729b12e0a080e9"}
+        encodedPreviewProps: {previewModeId:"f358770267376deebc6bde28ad37f858",previewModeSigningKey:"d8f3e9a6ee27ca039012ce66757940f9819345318e756dba4d8acd49b313e0f9",previewModeEncryptionKey:"182ef230428c64ac38bfccadd4d7c6f58a73535ca1c72dbde54526a19a3053cc"}
       })
       
     
@@ -601,6 +628,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ 64293:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("buffer");
 
 /***/ }),
@@ -608,6 +636,7 @@ module.exports = require("buffer");
 /***/ 45532:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("critters");
 
 /***/ }),
@@ -615,6 +644,7 @@ module.exports = require("critters");
 /***/ 76417:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("crypto");
 
 /***/ }),
@@ -622,6 +652,7 @@ module.exports = require("crypto");
 /***/ 28614:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("events");
 
 /***/ }),
@@ -629,6 +660,7 @@ module.exports = require("events");
 /***/ 35747:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("fs");
 
 /***/ }),
@@ -636,6 +668,7 @@ module.exports = require("fs");
 /***/ 98605:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("http");
 
 /***/ }),
@@ -643,6 +676,7 @@ module.exports = require("http");
 /***/ 57211:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("https");
 
 /***/ }),
@@ -650,6 +684,7 @@ module.exports = require("https");
 /***/ 33700:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/compiled/@ampproject/toolbox-optimizer");
 
 /***/ }),
@@ -657,6 +692,7 @@ module.exports = require("next/dist/compiled/@ampproject/toolbox-optimizer");
 /***/ 12087:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("os");
 
 /***/ }),
@@ -664,6 +700,7 @@ module.exports = require("os");
 /***/ 85622:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("path");
 
 /***/ }),
@@ -671,6 +708,7 @@ module.exports = require("path");
 /***/ 61765:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("process");
 
 /***/ }),
@@ -678,6 +716,7 @@ module.exports = require("process");
 /***/ 71191:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("querystring");
 
 /***/ }),
@@ -685,6 +724,7 @@ module.exports = require("querystring");
 /***/ 92413:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("stream");
 
 /***/ }),
@@ -692,6 +732,7 @@ module.exports = require("stream");
 /***/ 24304:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("string_decoder");
 
 /***/ }),
@@ -699,6 +740,7 @@ module.exports = require("string_decoder");
 /***/ 78835:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("url");
 
 /***/ }),
@@ -706,6 +748,7 @@ module.exports = require("url");
 /***/ 31669:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("util");
 
 /***/ }),
@@ -713,7 +756,15 @@ module.exports = require("util");
 /***/ 78761:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("zlib");
+
+/***/ }),
+
+/***/ 72431:
+/***/ (() => {
+
+/* (ignored) */
 
 /***/ })
 
@@ -759,7 +810,7 @@ module.exports = require("zlib");
 /******/ 	__webpack_require__.x = () => {
 /******/ 		// Load entry module and return exports
 /******/ 		// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 		var __webpack_exports__ = __webpack_require__.O(undefined, [158,84,312,426,296], () => (__webpack_require__(33557)))
+/******/ 		var __webpack_exports__ = __webpack_require__.O(undefined, [158,208,842,893,57,324], () => (__webpack_require__(12952)))
 /******/ 		__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 		return __webpack_exports__;
 /******/ 	};
@@ -922,10 +973,11 @@ module.exports = require("zlib");
 /******/ 		var next = __webpack_require__.x;
 /******/ 		__webpack_require__.x = () => {
 /******/ 			__webpack_require__.e(158);
-/******/ 			__webpack_require__.e(84);
-/******/ 			__webpack_require__.e(312);
-/******/ 			__webpack_require__.e(426);
-/******/ 			__webpack_require__.e(296);
+/******/ 			__webpack_require__.e(208);
+/******/ 			__webpack_require__.e(842);
+/******/ 			__webpack_require__.e(893);
+/******/ 			__webpack_require__.e(57);
+/******/ 			__webpack_require__.e(324);
 /******/ 			return next();
 /******/ 		};
 /******/ 	})();
