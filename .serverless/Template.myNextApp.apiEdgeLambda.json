@@ -1,8 +1,8 @@
 {
   "name": "puaqwem-fi5v8sn",
-  "hash": "qOTN8JugOBciawWYlvj44NuSpntd4pr59FXVygT9bk4=",
+  "hash": "CtQb9v0AKVXGjb90G88ZweD8iK4T2nwNj4aFJ0GIlE4=",
   "description": "API Lambda@Edge for Next CloudFront distribution",
-  "memory": 512,
+  "memory": 1024,
   "timeout": 10,
   "code": "C:\\Users\\jzhon\\Documents\\Github\\ntrance\\.serverless_nextjs\\api-lambda",
   "shims": [],

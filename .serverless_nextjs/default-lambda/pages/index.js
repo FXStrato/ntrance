@@ -39,7 +39,6 @@ function Home() {
       children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_3__/* .Center */ .M, {
         textAlign: "center",
         h: "10rem",
-        color: "white",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__/* .VStack */ .gC, {
           spacing: 4,
           children: [/*#__PURE__*/react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__/* .Heading */ .X, {
@@ -113,7 +112,7 @@ function getServerSideProps({
 
 /***/ }),
 
-/***/ 23256:
+/***/ 61546:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -146,15 +145,10 @@ __webpack_require__.r(__webpack_exports__);
 
       
       const { processEnv } = __webpack_require__(72333)
-      processEnv([{"path":".env.local","contents":"GITHUB_TOKEN=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"}])
+      processEnv([{"path":".env.local","contents":"GITHUB_TOKEN=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"}])
     
       
-        const { setConfig } = __webpack_require__(11752)
-      
-      
-        const runtimeConfig = {"publicRuntimeConfig":{},"serverRuntimeConfig":{"githubToken":"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"}}
-        setConfig(runtimeConfig)
-      
+      const runtimeConfig = {}
       ;
 
       const documentModule = __webpack_require__(5924)
@@ -213,11 +207,11 @@ __webpack_require__.r(__webpack_exports__);
         rewrites: combinedRewrites,
         i18n: undefined,
         page: "/",
-        buildId: "_XfFx-nlUHVcWosf_Uy6q",
-        escapedBuildId: "_XfFx\-nlUHVcWosf_Uy6q",
+        buildId: "HfFM3XeQeAywSRwUgO6EC",
+        escapedBuildId: "HfFM3XeQeAywSRwUgO6EC",
         basePath: "",
         pageIsDynamic: false,
-        encodedPreviewProps: {previewModeId:"803c75af06db97c4479432a87f49a298",previewModeSigningKey:"9f4c1d2355f8f8013411de3f1aa43264bfaa1787f6efc15078756d4a9f392d5c",previewModeEncryptionKey:"93980f8b79b448eefc3e96ba82370203454d62863daac537a540ccd7b3428273"}
+        encodedPreviewProps: {previewModeId:"1818db9309d855685bb74b1836e916f7",previewModeSigningKey:"4afdf7ee77412780724d9c7b3dcbdb33a3f0c5d46c859f2f49883ae40abfeca3",previewModeEncryptionKey:"07c03e938e69db05ff1c1f9b0957fde1aa7c3f4b9f152e4742729b12e0a080e9"}
       })
       
     
@@ -401,7 +395,7 @@ module.exports = require("zlib");
 /******/ 	__webpack_require__.x = () => {
 /******/ 		// Load entry module and return exports
 /******/ 		// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 		var __webpack_exports__ = __webpack_require__.O(undefined, [288,84,312,758,404,296], () => (__webpack_require__(23256)))
+/******/ 		var __webpack_exports__ = __webpack_require__.O(undefined, [158,84,312,758,404,296], () => (__webpack_require__(61546)))
 /******/ 		__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 		return __webpack_exports__;
 /******/ 	};
@@ -563,7 +557,7 @@ module.exports = require("zlib");
 /******/ 	(() => {
 /******/ 		var next = __webpack_require__.x;
 /******/ 		__webpack_require__.x = () => {
-/******/ 			__webpack_require__.e(288);
+/******/ 			__webpack_require__.e(158);
 /******/ 			__webpack_require__.e(84);
 /******/ 			__webpack_require__.e(312);
 /******/ 			__webpack_require__.e(758);

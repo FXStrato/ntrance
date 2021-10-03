@@ -1,8 +1,8 @@
 {
   "name": "puaqwem-04f2o7l",
-  "hash": "y6oHUNycAjSsWgN3W0grRAX5OAH1ZznwoOmBv1fBrSA=",
+  "hash": "gE6QpFywensChv3gGcA8DNNITh+e9fSowFUh5pxZPZQ=",
   "description": "Default Lambda@Edge for Next CloudFront distribution",
-  "memory": 512,
+  "memory": 1024,
   "timeout": 10,
   "code": "C:\\Users\\jzhon\\Documents\\Github\\ntrance\\.serverless_nextjs\\default-lambda",
   "shims": [],

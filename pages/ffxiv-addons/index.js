@@ -1,7 +1,18 @@
 import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
 import ReleaseCard from '../../components/ReleaseCard';
-import { Center, Heading, Text, VStack, SimpleGrid, Container } from '@chakra-ui/react';
+import {
+  Center,
+  Heading,
+  Text,
+  VStack,
+  SimpleGrid,
+  Container,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+} from '@chakra-ui/react';
+import Link from 'next/link';
 import client from '../../src/server/apollo-client';
 import { repos, repoQuery } from '../../components/helpers';
 
@@ -9,7 +20,7 @@ const FFXIVAddons = React.memo(({ data }) => {
   const [cards, setCards] = useState();
 
   useEffect(() => {
-    if (!data.errorType) {
+    if (data && !data.errorType) {
       let cards = [];
       repos.map((repo) => {
         const el = data[repo];
@@ -24,8 +35,8 @@ const FFXIVAddons = React.memo(({ data }) => {
           <Text color='red.600'>An error occurred querying for the repositories</Text>
         </Center>
       );
-      if (data.errorType === 'network') console.error(`Network error querying repos: ${data.statusCode}`);
-      if (data.errorType === 'graphQL') console.error(`GraphQL error(s) querying repos`);
+      if (data?.errorType === 'network') console.error(`Network error querying repos: ${data.statusCode}`);
+      if (data?.errorType === 'graphQL') console.error(`GraphQL error(s) querying repos`);
     }
   }, [data]);
 
@@ -39,6 +50,18 @@ const FFXIVAddons = React.memo(({ data }) => {
       <main>
         <Center textAlign='center' h='10rem'>
           <VStack spacing={4}>
+            <Breadcrumb w='full' textAlign='left' mb={2}>
+              <BreadcrumbItem>
+                <BreadcrumbLink>
+                  <Link href='/'>
+                    <a>Home</a>
+                  </Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbItem isCurrentPage>
+                <BreadcrumbLink>FFXIV-Addons</BreadcrumbLink>
+              </BreadcrumbItem>
+            </Breadcrumb>
             <Heading fontSize={'xl'}>FFXIV Addons</Heading>
             <Text fontWeight={500}>
               Tracker for specific FFXIV related repositories so I don&apos;t have to go to each individual one
@@ -58,14 +81,14 @@ const FFXIVAddons = React.memo(({ data }) => {
 FFXIVAddons.displayName = 'FFXIVAddons';
 
 export async function getServerSideProps(context) {
-  let data;
+  let data = null;
+  // Comment this to the end of the if statement when doing local dev
   const r = await client
     .query({
       query: repoQuery,
     })
     .then((res) => res)
     .catch((err) => err);
-  const { req } = context;
   if (r.networkError) {
     data = { statusCode: r.networkError.statusCode, errorType: 'network' };
   } else if (r.graphQLErrors) {
@@ -74,7 +97,7 @@ export async function getServerSideProps(context) {
     data = r.data;
     console.info(JSON.stringify(data.rateLimit));
   }
-
+  const { req } = context;
   return {
     props: {
       data: data,

@@ -1,5 +1,5 @@
-exports.id = 288;
-exports.ids = [288];
+exports.id = 158;
+exports.ids = [158];
 exports.modules = {
 
 /***/ 50478:
@@ -10054,14 +10054,6 @@ if (typeof Object.create === 'function') {
 
 /***/ }),
 
-/***/ 11752:
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-module.exports = __webpack_require__(62594)
-
-
-/***/ }),
-
 /***/ 96792:
 /***/ ((__unused_webpack_module, exports) => {
 
@@ -11687,31 +11679,6 @@ function getRouteRegex(normalizedRoute) {
     re: new RegExp(`^${result.parameterizedRoute}(?:/)?$`),
     groups: result.groups
   };
-}
-
-/***/ }),
-
-/***/ 62594:
-/***/ ((__unused_webpack_module, exports) => {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports.setConfig = setConfig;
-exports.default = void 0;
-let runtimeConfig;
-
-var _default = () => {
-  return runtimeConfig;
-};
-
-exports.default = _default;
-
-function setConfig(configValue) {
-  runtimeConfig = configValue;
 }
 
 /***/ }),
