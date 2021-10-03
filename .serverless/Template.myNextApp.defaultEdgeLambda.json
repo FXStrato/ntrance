@@ -1,0 +1,17 @@
+{
+  "name": "puaqwem-04f2o7l",
+  "hash": "y6oHUNycAjSsWgN3W0grRAX5OAH1ZznwoOmBv1fBrSA=",
+  "description": "Default Lambda@Edge for Next CloudFront distribution",
+  "memory": 512,
+  "timeout": 10,
+  "code": "C:\\Users\\jzhon\\Documents\\Github\\ntrance\\.serverless_nextjs\\default-lambda",
+  "shims": [],
+  "handler": "index.handler",
+  "runtime": "nodejs14.x",
+  "env": {},
+  "role": {
+    "arn": "arn:aws:iam::563522558005:role/puaqwem-mehnnlh"
+  },
+  "arn": "arn:aws:lambda:us-east-1:563522558005:function:puaqwem-04f2o7l",
+  "region": "us-east-1"
+}

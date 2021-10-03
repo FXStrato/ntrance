@@ -1,5 +1,5 @@
 {
-  "name": "ffxiv-addons",
+  "name": "ntrance",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -17,7 +17,6 @@
     "framer-motion": "4",
     "graphql": "^15.6.0",
     "next": "11.1.2",
-    "pino": "^6.13.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-markdown": "^7.0.1"

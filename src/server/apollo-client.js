@@ -1,7 +1,6 @@
 import { ApolloClient, createHttpLink, InMemoryCache, from } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { onError } from '@apollo/client/link/error';
-import logger from './logger';
 
 const httpLink = createHttpLink({
   uri: 'https://api.github.com/graphql',
@@ -10,10 +9,10 @@ const httpLink = createHttpLink({
 const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (graphQLErrors)
     graphQLErrors.forEach(({ message, locations, path }) =>
-      logger.error(`[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`)
+      console.error(`[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`)
     );
 
-  if (networkError) logger.error(networkError);
+  if (networkError) console.error(networkError);
 });
 
 const authLink = setContext((_, { headers }) => {

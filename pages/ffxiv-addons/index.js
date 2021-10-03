@@ -3,8 +3,7 @@ import React, { useEffect, useState } from 'react';
 import ReleaseCard from '../../components/ReleaseCard';
 import { Center, Heading, Text, VStack, SimpleGrid, Container } from '@chakra-ui/react';
 import client from '../../src/server/apollo-client';
-import { repos, repoQuery } from './helpers';
-import logger from './../../src/server/logger';
+import { repos, repoQuery } from '../../components/helpers';
 
 const FFXIVAddons = React.memo(({ data }) => {
   const [cards, setCards] = useState();
@@ -73,7 +72,7 @@ export async function getServerSideProps(context) {
     data = { errorType: 'graphQL' };
   } else {
     data = r.data;
-    logger.info(data.rateLimit);
+    console.info(JSON.stringify(data.rateLimit));
   }
 
   return {
