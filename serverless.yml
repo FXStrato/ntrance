@@ -2,3 +2,16 @@ myNextApp:
   component: '@sls-next/serverless-component@3.4.0'
   inputs:
     memory: 1024
+    cloudfront:
+      # this is the default cache behaviour of the cloudfront distribution
+      # the origin-request edge lambda associated to this cache behaviour does the pages server side rendering
+      defaults:
+        forward:
+          headers: [CloudFront-Is-Desktop-Viewer, CloudFront-Is-Mobile-Viewer, CloudFront-Is-Tablet-Viewer]
+      # this is the cache behaviour for next.js api pages
+      api:
+        ttl: 10
+      # you can set other cache behaviours like "defaults" above that can handle server side rendering
+      # but more specific for a subset of your next.js pages
+      /ffxiv-addons:
+        ttl: 7200

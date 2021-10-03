@@ -519,7 +519,7 @@ function getServerSideProps({
 
 /***/ }),
 
-/***/ 12952:
+/***/ 2006:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -552,7 +552,7 @@ __webpack_require__.r(__webpack_exports__);
 
       
       const { processEnv } = __webpack_require__(72333)
-      processEnv([{"path":".env.local","contents":"GITHUB_TOKEN=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"}])
+      processEnv([{"path":".env.local","contents":"GITHUB_TOKEN=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"}])
     
       
       const runtimeConfig = {}
@@ -614,11 +614,11 @@ __webpack_require__.r(__webpack_exports__);
         rewrites: combinedRewrites,
         i18n: undefined,
         page: "/ffxiv-addons",
-        buildId: "t8EmmKlR9L90rnRQnlE0l",
-        escapedBuildId: "t8EmmKlR9L90rnRQnlE0l",
+        buildId: "OvbkFbWCgg-nhzdccDofx",
+        escapedBuildId: "OvbkFbWCgg\-nhzdccDofx",
         basePath: "",
         pageIsDynamic: false,
-        encodedPreviewProps: {previewModeId:"f358770267376deebc6bde28ad37f858",previewModeSigningKey:"d8f3e9a6ee27ca039012ce66757940f9819345318e756dba4d8acd49b313e0f9",previewModeEncryptionKey:"182ef230428c64ac38bfccadd4d7c6f58a73535ca1c72dbde54526a19a3053cc"}
+        encodedPreviewProps: {previewModeId:"f4dab8e6d5af2c1f7503fffbd9f710da",previewModeSigningKey:"84dd7487ef8090a50f64d1501180a0c61bf92f4cb7219597d687d2f777250947",previewModeEncryptionKey:"178af8b9a60a20ed81c98aee94e59fa25e39dc6b911e33e3e819b42b8bbb6300"}
       })
       
     
@@ -810,7 +810,7 @@ module.exports = require("zlib");
 /******/ 	__webpack_require__.x = () => {
 /******/ 		// Load entry module and return exports
 /******/ 		// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 		var __webpack_exports__ = __webpack_require__.O(undefined, [158,208,842,893,57,324], () => (__webpack_require__(12952)))
+/******/ 		var __webpack_exports__ = __webpack_require__.O(undefined, [158,208,842,893,57,324], () => (__webpack_require__(2006)))
 /******/ 		__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 		return __webpack_exports__;
 /******/ 	};
