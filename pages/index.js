@@ -17,11 +17,9 @@ export default function Home() {
       </Center>
       <Container maxW='2xl' display='flex'>
         <SimpleGrid columns={1} spacing={5}>
-          <ChakraLink>
-            <Link href='/ffxiv-addons'>
-              <a>FFXIV Addons</a>
-            </Link>
-          </ChakraLink>
+          <Link passHref href='/ffxiv-addons'>
+            <ChakraLink>FFXIV Addons</ChakraLink>
+          </Link>
         </SimpleGrid>
       </Container>
     </>

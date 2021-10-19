@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import client from '../../src/server/apollo-client';
-import { repos, repoQuery } from '../../components/helpers';
+import { repoQuery, isToday } from '../../components/helpers';
 
 const FFXIVAddons = React.memo(({ data }) => {
   const [cards, setCards] = useState();
@@ -22,12 +22,25 @@ const FFXIVAddons = React.memo(({ data }) => {
   useEffect(() => {
     if (data && !data.errorType) {
       let cards = [];
-      repos.map((repo) => {
-        const el = data[repo];
-        if (el?.releases?.nodes[0]) {
-          cards.push(<ReleaseCard {...el.releases.nodes[0]} />);
+      const dateSorted = Object.values(data);
+      //First element is always the rateLimit, remove that before sorting
+      dateSorted.shift();
+      // Sort by descending
+      dateSorted.sort((a, b) =>
+        new Date(a?.releases.nodes[0].publishedAt) >= new Date(b?.releases.nodes[0].publishedAt) ? -1 : 1
+      );
+      for (const repo of dateSorted) {
+        if (repo?.releases?.nodes[0]) {
+          const isUpdated = isToday(new Date(repo.releases.nodes[0].publishedAt));
+          cards.push(
+            <ReleaseCard
+              {...repo.releases.nodes[0]}
+              isUpdated={isUpdated}
+              key={`releasecard-${repo.releases.nodes[0].repository.name}`}
+            />
+          );
         }
-      });
+      }
       setCards(cards);
     } else {
       setCards(
@@ -52,11 +65,9 @@ const FFXIVAddons = React.memo(({ data }) => {
           <VStack spacing={4}>
             <Breadcrumb w='full' textAlign='left' mb={2}>
               <BreadcrumbItem>
-                <BreadcrumbLink>
-                  <Link href='/'>
-                    <a>Home</a>
-                  </Link>
-                </BreadcrumbLink>
+                <Link passHref href='/'>
+                  <BreadcrumbLink>Home</BreadcrumbLink>
+                </Link>
               </BreadcrumbItem>
               <BreadcrumbItem isCurrentPage>
                 <BreadcrumbLink>FFXIV-Addons</BreadcrumbLink>
@@ -100,7 +111,7 @@ export async function getServerSideProps(context) {
   const { req } = context;
   return {
     props: {
-      data: data,
+      data,
       cookies: req.headers.cookie ?? '',
     },
   };

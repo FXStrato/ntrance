@@ -25,12 +25,13 @@ import {
   Tbody,
   Tr,
   Td,
+  Badge,
 } from '@chakra-ui/react';
 import ReactMarkdown from 'react-markdown';
 import { formatBytes } from './helpers';
 
 const ReleaseCard = React.memo((props) => {
-  const { author, publishedAt, tagName, description, releaseAssets, repository, url } = props;
+  const { author, publishedAt, tagName, description, releaseAssets, repository, url, isUpdated } = props;
 
   const assets = releaseAssets.nodes.map((el) => (
     <Tr key={`tr-${el.name}`}>
@@ -66,6 +67,13 @@ const ReleaseCard = React.memo((props) => {
         </Center>
         <Center>
           <VStack w='full' spacing={2}>
+            {isUpdated && (
+              <Flex w='full' textAlign='right' alignItems='center' justifyContent='flex-end' mb={5}>
+                <Badge variant='subtle' colorScheme='green'>
+                  Updated
+                </Badge>
+              </Flex>
+            )}
             <StatGroup w='full'>
               <Stat>
                 <StatLabel>Version</StatLabel>

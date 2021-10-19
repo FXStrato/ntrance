@@ -1,11 +1,5 @@
 import { gql } from '@apollo/client';
 
-/**
- * When adding a new repo, don't forget to update both repos and repoQuery
- */
-
-export const repos = ['XivAlexander', 'ffxivACTPlugin', 'ffxivMaterialUi'];
-
 export const repoQuery = gql`
   query GetFFXIVRepos {
     rateLimit {
@@ -13,32 +7,6 @@ export const repoQuery = gql`
       remaining
     }
     XivAlexander: repository(owner: "Soreepeong", name: "XivAlexander") {
-      releases(last: 1) {
-        nodes {
-          author {
-            login
-            avatarUrl
-          }
-          repository {
-            name
-            url
-          }
-          publishedAt
-          name
-          description
-          tagName
-          url
-          releaseAssets(first: 10) {
-            nodes {
-              name
-              downloadUrl
-              size
-            }
-          }
-        }
-      }
-    }
-    ffxivMaterialUi: repository(owner: "skotlex", name: "ffxiv-material-ui") {
       releases(last: 1) {
         nodes {
           author {
@@ -90,6 +58,58 @@ export const repoQuery = gql`
         }
       }
     }
+    ffxivMaterialUi: repository(owner: "skotlex", name: "ffxiv-material-ui") {
+      releases(last: 1) {
+        nodes {
+          author {
+            login
+            avatarUrl
+          }
+          repository {
+            name
+            url
+          }
+          publishedAt
+          name
+          description
+          tagName
+          url
+          releaseAssets(first: 10) {
+            nodes {
+              name
+              downloadUrl
+              size
+            }
+          }
+        }
+      }
+    }
+    Triggernometry: repository(owner: "paissaheavyindustries", name: "Triggernometry") {
+      releases(last: 1) {
+        nodes {
+          author {
+            login
+            avatarUrl
+          }
+          repository {
+            name
+            url
+          }
+          publishedAt
+          name
+          description
+          tagName
+          url
+          releaseAssets(first: 10) {
+            nodes {
+              name
+              downloadUrl
+              size
+            }
+          }
+        }
+      }
+    }
   }
 `;
 
@@ -103,4 +123,13 @@ export const formatBytes = (bytes, decimals = 2) => {
   const i = Math.floor(Math.log(bytes) / Math.log(k));
 
   return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+};
+
+export const isToday = (someDate) => {
+  const today = new Date();
+  return (
+    someDate.getDate() == today.getDate() &&
+    someDate.getMonth() == today.getMonth() &&
+    someDate.getFullYear() == today.getFullYear()
+  );
 };

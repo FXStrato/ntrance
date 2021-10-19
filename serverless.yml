@@ -10,8 +10,12 @@ myNextApp:
           headers: [CloudFront-Is-Desktop-Viewer, CloudFront-Is-Mobile-Viewer, CloudFront-Is-Tablet-Viewer]
       # this is the cache behaviour for next.js api pages
       api:
-        ttl: 10
+        minTTL: 10
+        maxTTL: 10
+        defaultTTL: 10
       # you can set other cache behaviours like "defaults" above that can handle server side rendering
       # but more specific for a subset of your next.js pages
       /ffxiv-addons:
-        ttl: 7200
+        minTTL: 7200
+        maxTTL: 7200
+        defaultTTL: 7200
