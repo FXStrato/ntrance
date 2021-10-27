@@ -14,6 +14,7 @@ import {
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import client from '../../src/server/apollo-client';
+import logger from '../../src/server/logger';
 import { repoQuery, isToday } from '../../components/helpers';
 
 const FFXIVAddons = React.memo(({ data }) => {
@@ -91,24 +92,20 @@ const FFXIVAddons = React.memo(({ data }) => {
 
 FFXIVAddons.displayName = 'FFXIVAddons';
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps({ req }) {
   let data = null;
   // Comment this to the end of the if statement when doing local dev
-  const r = await client
-    .query({
-      query: repoQuery,
-    })
-    .then((res) => res)
-    .catch((err) => err);
+  const r = await client.query({
+    query: repoQuery
+  })
   if (r.networkError) {
     data = { statusCode: r.networkError.statusCode, errorType: 'network' };
   } else if (r.graphQLErrors) {
     data = { errorType: 'graphQL' };
   } else {
     data = r.data;
-    console.info(JSON.stringify(data.rateLimit));
+    logger.info(data.rateLimit);
   }
-  const { req } = context;
   return {
     props: {
       data,

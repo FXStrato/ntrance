@@ -1,6 +1,7 @@
-import { ApolloClient, createHttpLink, InMemoryCache, from } from '@apollo/client';
+import { ApolloClient, createHttpLink, from } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { onError } from '@apollo/client/link/error';
+import { InvalidationPolicyCache } from 'apollo-invalidation-policies';
 
 const httpLink = createHttpLink({
   uri: 'https://api.github.com/graphql',
@@ -30,7 +31,11 @@ const authLink = setContext((_, { headers }) => {
 const client = new ApolloClient({
   ssrMode: true,
   link: from([errorLink, authLink, httpLink]),
-  cache: new InMemoryCache(),
+  cache: new InvalidationPolicyCache({
+    invalidationPolicies: {
+      timeToLive: 3600000,
+    },
+  }),
 });
 
 export default client;

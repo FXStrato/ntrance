@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "deploy": "npx serverless"
+    "lint": "next lint"
   },
   "dependencies": {
     "@apollo/client": "^3.4.15",
@@ -15,12 +14,15 @@
     "@chakra-ui/react": "^1.6.10",
     "@emotion/react": "11",
     "@emotion/styled": "11",
+    "apollo-invalidation-policies": "^1.0.0-beta16",
     "framer-motion": "^4",
     "graphql": "^15.6.0",
     "next": "^12.0.1",
+    "pino": "^7.0.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-markdown": "^7.0.1"
+    "react-markdown": "^7.0.1",
+    "sharp": "^0.29.2"
   },
   "devDependencies": {
     "eslint": "7.32.0",
