@@ -58,8 +58,6 @@ const FFXIVAddons = React.memo(({ data }) => {
     <div>
       <Head>
         <title>nTrance | FFXIV Addons</title>
-        <meta property='og:title' content='nTrance | FFXIV Addons'/>
-        <meta property='twitter:title' content='nTrance | FFXIV Addons'/>
         <meta property='description' content='Tracks latest versions of specific ffxiv related github repositories' />
       </Head>
 
