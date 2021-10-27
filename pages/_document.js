@@ -25,10 +25,7 @@ export default class MyDocument extends Document {
           <link rel='manifest' href='/manifest.json' />
           <meta name='msapplication-TileColor' content='#ffffff' />
           <meta name='msapplication-TileImage' content='/ms-icon-144x144.png' />
-          <meta property='og:description' content={manifest.description} />
-          <meta property='og:title' content={manifest.short_name} />
-          <meta property='twitter:description' content={manifest.description} />
-          <meta property='twitter:title' content={manifest.short_name} />
+          <meta name='theme-color' content={manifest.theme_color} />
           <meta property='og:image' content='/apple-icon.png' />
           <meta property='twitter:image' content='/apple-icon.png' />
         </Head>
