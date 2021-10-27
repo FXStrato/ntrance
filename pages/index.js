@@ -1,13 +1,12 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { Center, Heading, Text, VStack, SimpleGrid, Container, Box, Link as ChakraLink } from '@chakra-ui/react';
+import { Center, Heading, Text, VStack, SimpleGrid, Container, Link as ChakraLink } from '@chakra-ui/react';
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Indexed Content</title>
-        <meta name='description' content='Repo of useful things' />
+        <title>nTrance</title>
       </Head>
       <Center textAlign='center' h='10rem'>
         <VStack spacing={4}>
