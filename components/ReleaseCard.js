@@ -28,6 +28,7 @@ import {
   Badge,
 } from '@chakra-ui/react';
 import ReactMarkdown from 'react-markdown';
+import Image from 'next/image';
 import { formatBytes } from './helpers';
 
 const ReleaseCard = React.memo((props) => {
@@ -54,7 +55,16 @@ const ReleaseCard = React.memo((props) => {
       <SimpleGrid w={'full'} columns={{ sm: 1, md: 2 }} spacing={5} mb={4}>
         <Center>
           <VStack spacing={0}>
-            <Avatar size={'lg'} src={author.avatarUrl} alt={'Avatar Alt'} mb={2} />
+            <Box mb={2}>
+              <Image
+                src={author.avatarUrl}
+                alt={`${repository.name} Avatar`}
+                width={64}
+                height={64}
+                className='releasecard-avatarimg'
+              />
+            </Box>
+            {/* <Avatar size={'lg'} src={author.avatarUrl} alt={'Avatar Alt'} mb={2} /> */}
             <Heading fontSize={'lg'} fontFamily={'body'}>
               <Link href={repository.url} target='_blank'>
                 {repository.name}

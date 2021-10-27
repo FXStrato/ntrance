@@ -1,0 +1,36 @@
+{
+  "name": "nTrance",
+  "short_name": "nTrance",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1A202C",
+  "theme_color": "#1A202C",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo-16x16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "/logo-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "/logo-180x180.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "/logo-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+    {
+      "src": "/logo-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
