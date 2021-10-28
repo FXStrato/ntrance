@@ -26,8 +26,8 @@ export default class MyDocument extends Document {
           <meta name='msapplication-TileColor' content='#ffffff' />
           <meta name='msapplication-TileImage' content='/ms-icon-144x144.png' />
           <meta name='theme-color' content={manifest.theme_color} />
-          <meta property='og:image' content='/apple-icon-180x180.png' />
-          <meta property='twitter:image' content='/apple-icon-180x180.png' />
+          <meta property='og:image' content='/logo.png' />
+          <meta property='twitter:image' content='/logo.png' />
         </Head>
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
